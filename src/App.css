@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fdc7ee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+h1 {
+  color: black;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.description {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.upload-area {
+  border: 2px dashed #e482e9;
+  border-radius: 12px;
+  padding: 30px 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.upload-area:hover {
+  border-color: #7B2FBE;
+  background: #f0f7ff;
+}
+.upload-area label {
+  color: #e482e9;
+  font-weight: bold;
+  cursor: pointer;
+}
+.upload-area:hover label {
+  color: #7B2FBE;
+}
+.file-name {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #666;
+}
+button {
+  background: #fdc7ee;
+  color: black;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: 0.2s;
+  width: 100%;
+}
+button:hover {
+  background: #e482e9;
+}
+.result {
+  margin-top: 20px;
+  font-size: 14px;
+  min-height: 24px;
+}
+.upload-icon {
+  color: #e482e9;
+  transition: color 0.3s ease;
+}
+
+.upload-area:hover .upload-icon {
+  color: #7B2FBE;
+}
+/* Адаптация для телефонов (экраны шириной до 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    max-width: 100%;
+    margin: 20px;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .upload-area {
+    padding: 20px 10px;
+  }
+
+  .upload-area label {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 24px;
+  }
+
+  .result {
+    font-size: 13px;
+  }
+
+  .file-name {
+    font-size: 13px;
+  }
+}
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+    margin: 10px;
+  }
+  .upload-icon {
+  width: 18px;
+  height: 18px;
+}
+  h1 {
+    font-size: 18px;
+  }
+  button {
+    font-size: 13px;
+    padding: 12px 16px;
+  }
+}
