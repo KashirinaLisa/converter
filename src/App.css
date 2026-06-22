@@ -1,12 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   background: #fdc7ee;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Обёртка всей страницы */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Белая полоса сверху на всю ширину */
+.app-header {
+  background: white;
+  padding: 12px 24px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end; /* кнопки справа, если добавятся */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Контент центрируется */
+.main-content {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  padding: 20px;
+  width: 100%;
 }
+
 .container {
   background: white;
   padding: 40px;
@@ -16,16 +57,19 @@ body {
   max-width: 500px;
   width: 100%;
 }
+
 h1 {
   color: black;
   font-size: 24px;
   margin-bottom: 8px;
 }
+
 .description {
   color: #666;
   font-size: 14px;
   margin-bottom: 24px;
 }
+
 .upload-area {
   border: 2px dashed #e482e9;
   border-radius: 12px;
@@ -38,19 +82,24 @@ h1 {
   border-color: #7B2FBE;
   background: #f0f7ff;
 }
+
 .upload-area label {
   color: #e482e9;
   font-weight: bold;
   cursor: pointer;
 }
+
 .upload-area:hover label {
   color: #7B2FBE;
 }
+
 .file-name {
   margin-top: 12px;
   font-size: 14px;
   color: #666;
+  word-break: break-word;
 }
+
 button {
   background: #fdc7ee;
   color: black;
@@ -64,14 +113,18 @@ button {
   transition: 0.2s;
   width: 100%;
 }
+
 button:hover {
   background: #e482e9;
 }
+
 .result {
   margin-top: 20px;
   font-size: 14px;
   min-height: 24px;
+  word-break: break-word;
 }
+
 .upload-icon {
   color: #e482e9;
   transition: color 0.3s ease;
@@ -80,55 +133,53 @@ button:hover {
 .upload-area:hover .upload-icon {
   color: #7B2FBE;
 }
-/* Адаптация для телефонов (экраны шириной до 768px) */
+
+.upload-area.dragging {
+  border-color: #7B2FBE;
+  background: #e8d5f5;
+  transform: scale(1.02);
+}
+
+/* Адаптация для телефонов */
 @media (max-width: 768px) {
   .container {
     padding: 20px;
-    max-width: 100%;
-    margin: 20px;
+    margin: 10px;
     border-radius: 12px;
   }
-
   h1 {
     font-size: 20px;
   }
-
   .description {
     font-size: 13px;
   }
-
   .upload-area {
-    padding: 20px 10px;
+    padding: 20px 15px;
   }
-
   .upload-area label {
     font-size: 14px;
   }
-
   button {
     font-size: 14px;
-    padding: 10px 24px;
+    padding: 10px 20px;
   }
-
   .result {
     font-size: 13px;
   }
-
   .file-name {
     font-size: 13px;
   }
 }
 
-/* Для очень маленьких экранов (до 480px) */
 @media (max-width: 480px) {
   .container {
     padding: 16px;
-    margin: 10px;
+    margin: 8px;
   }
   .upload-icon {
-  width: 18px;
-  height: 18px;
-}
+    width: 18px;
+    height: 18px;
+  }
   h1 {
     font-size: 18px;
   }
